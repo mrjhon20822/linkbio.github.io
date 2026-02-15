@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>link bio mrjhon official</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -17,13 +17,14 @@
 }
 
 body{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#0f0f1a,#1a0033,#001f3f);
-  overflow:hidden;
-  color:white;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#0f0f1a,#1a0033,#001f3f);
+  color: white;
+  padding: 40px 20px; /* Jarak atas bawah agar tidak nempel */
+  overflow-x: hidden;
 }
 
 /* METEOR */
@@ -34,15 +35,12 @@ body{
   background:linear-gradient(transparent, white);
   animation:fall linear infinite;
   opacity:0.8;
+  z-index: 1;
 }
 
 @keyframes fall{
-  from{
-    transform:translateY(-100px) translateX(0);
-  }
-  to{
-    transform:translateY(100vh) translateX(-200px);
-  }
+  from{ transform:translateY(-100px) translateX(0); }
+  to{ transform:translateY(100vh) translateX(-200px); }
 }
 
 /* FIREFLY */
@@ -54,6 +52,7 @@ body{
   border-radius:50%;
   box-shadow:0 0 10px #7f5af0, 0 0 20px #7f5af0;
   animation:float 6s ease-in-out infinite alternate;
+  z-index: 1;
 }
 
 @keyframes float{
@@ -62,66 +61,78 @@ body{
 }
 
 /* CONTAINER */
-.container{
-  position:relative;
-  width:90%;
-  max-width:400px;
-  backdrop-filter:blur(20px);
-  background:rgba(255,255,255,0.05);
-  padding:30px;
-  border-radius:20px;
-  text-align:center;
-  box-shadow:0 0 40px rgba(0,0,0,0.6);
-  z-index:2;
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 450px; /* Sedikit lebih lebar agar lega */
+  backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.08);
+  padding: 40px 30px; /* Padding lebih besar */
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+  z-index: 2;
+  border: 1px solid rgba(255,255,255,0.1);
 }
 
 .profile-img{
-  width:110px;
-  height:110px;
-  border-radius:50%;
-  margin:auto;
-  margin-bottom:15px;
-  border:3px solid #7f5af0;
-  box-shadow:0 0 20px #7f5af0;
-  background:url('https://files.catbox.moe/0263u5.jpg') center/cover no-repeat;
+  width: 130px; /* Ukuran foto diperbesar */
+  height: 130px;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  border: 4px solid #7f5af0;
+  box-shadow: 0 0 30px rgba(127, 90, 240, 0.6);
+  background: url('https://files.catbox.moe/0263u5.jpg') center/cover no-repeat;
 }
 
 h1{
-  font-size:22px;
-  margin-bottom:5px;
+  font-size: 26px; /* Font diperbesar */
+  font-weight: 700;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
 }
 
 p{
-  font-size:14px;
-  opacity:0.7;
-  margin-bottom:25px;
+  font-size: 16px; /* Font diperbesar */
+  opacity: 0.8;
+  margin-bottom: 35px;
 }
 
 .link{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  text-decoration:none;
-  color:white;
-  padding:14px;
-  margin:12px 0;
-  border-radius:12px;
-  background:rgba(255,255,255,0.08);
-  transition:0.3s;
-  font-weight:600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-decoration: none;
+  color: white;
+  padding: 18px; /* Tombol lebih tebal */
+  margin: 15px 0;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.1);
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  font-weight: 600;
+  font-size: 17px; /* Font tombol diperbesar */
+  border: 1px solid rgba(255,255,255,0.05);
 }
 
 .link:hover{
-  background:#7f5af0;
-  transform:translateY(-3px);
-  box-shadow:0 0 15px #7f5af0;
+  background: #7f5af0;
+  transform: scale(1.03);
+  box-shadow: 0 0 25px rgba(127, 90, 240, 0.5);
 }
 
 .footer{
-  margin-top:20px;
-  font-size:12px;
-  opacity:0.5;
+  margin-top: 30px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+/* Penyesuaian untuk layar sangat kecil */
+@media (max-width: 375px) {
+  .container { padding: 30px 20px; }
+  h1 { font-size: 22px; }
+  .profile-img { width: 110px; height: 110px; }
 }
 </style>
 </head>
@@ -134,15 +145,15 @@ p{
   <p>1.369 Pengikut • 1.764 Suka</p>
 
   <a class="link" href="https://mrjhonmc.web.id" target="_blank">
-    <i class="fa-solid fa-globe"></i> Website
+    <i class="fa-solid fa-globe"></i> Website Utama
   </a>
 
   <a class="link" href="https://tiktok.com/@mrjhon_official" target="_blank">
-    <i class="fa-brands fa-tiktok"></i> TikTok
+    <i class="fa-brands fa-tiktok"></i> TikTok Profile
   </a>
 
   <a class="link" href="https://youtube.com/@mrjhon_official" target="_blank">
-    <i class="fa-brands fa-youtube"></i> YouTube
+    <i class="fa-brands fa-youtube"></i> YouTube Channel
   </a>
 
   <div class="footer">
