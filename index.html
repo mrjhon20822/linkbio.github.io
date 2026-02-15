@@ -23,11 +23,11 @@ body{
   align-items: center;
   background: linear-gradient(135deg,#0f0f1a,#1a0033,#001f3f);
   color: white;
-  padding: 40px 20px; /* Jarak atas bawah agar tidak nempel */
+  padding: 20px;
   overflow-x: hidden;
 }
 
-/* METEOR */
+/* METEOR - Tetap sama */
 .meteor{
   position:absolute;
   width:2px;
@@ -43,7 +43,7 @@ body{
   to{ transform:translateY(100vh) translateX(-200px); }
 }
 
-/* FIREFLY */
+/* FIREFLY - Tetap sama */
 .firefly{
   position:absolute;
   width:6px;
@@ -60,79 +60,71 @@ body{
   to{ transform:translateY(20px);}
 }
 
-/* CONTAINER */
+/* CONTAINER - LEBIH LEBAR & LEBIH GEDE */
 .container {
   position: relative;
-  width: 100%;
-  max-width: 450px; /* Sedikit lebih lebar agar lega */
-  backdrop-filter: blur(25px);
-  background: rgba(255, 255, 255, 0.08);
-  padding: 40px 30px; /* Padding lebih besar */
-  border-radius: 24px;
+  width: 95%; /* Lebih lebar dari sebelumnya */
+  max-width: 500px; /* Batas maksimal diperbesar */
+  backdrop-filter: blur(20px);
+  background: rgba(255,255,255,0.05);
+  padding: 50px 30px; /* Padding ditambah biar lega */
+  border-radius: 25px;
   text-align: center;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.8);
+  box-shadow: 0 0 40px rgba(0,0,0,0.6);
   z-index: 2;
-  border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* FOTO PROFIL - LEBIH BESAR */
 .profile-img{
-  width: 130px; /* Ukuran foto diperbesar */
-  height: 130px;
+  width: 150px; /* Dari 110px jadi 150px */
+  height: 150px; /* Dari 110px jadi 150px */
   border-radius: 50%;
   margin: auto;
   margin-bottom: 20px;
   border: 4px solid #7f5af0;
-  box-shadow: 0 0 30px rgba(127, 90, 240, 0.6);
+  box-shadow: 0 0 25px #7f5af0;
   background: url('https://files.catbox.moe/0263u5.jpg') center/cover no-repeat;
 }
 
+/* TEKS - LEBIH BESAR */
 h1{
-  font-size: 26px; /* Font diperbesar */
-  font-weight: 700;
+  font-size: 30px; /* Dari 22px jadi 30px */
   margin-bottom: 8px;
-  letter-spacing: 0.5px;
 }
 
 p{
-  font-size: 16px; /* Font diperbesar */
+  font-size: 18px; /* Dari 14px jadi 18px */
   opacity: 0.8;
   margin-bottom: 35px;
 }
 
+/* TOMBOL - LEBIH BESAR & TEBAL */
 .link{
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15px;
+  gap: 12px;
   text-decoration: none;
   color: white;
-  padding: 18px; /* Tombol lebih tebal */
+  padding: 18px; /* Padding diperbesar agar tombol tebal */
   margin: 15px 0;
-  border-radius: 16px;
-  background: rgba(255,255,255,0.1);
-  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  font-weight: 600;
-  font-size: 17px; /* Font tombol diperbesar */
-  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 15px;
+  background: rgba(255,255,255,0.08);
+  transition: 0.3s;
+  font-weight: 700; /* Font weight ditebalkan */
+  font-size: 18px; /* Ukuran teks di tombol diperbesar */
 }
 
 .link:hover{
   background: #7f5af0;
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(127, 90, 240, 0.5);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 20px #7f5af0;
 }
 
 .footer{
   margin-top: 30px;
   font-size: 14px;
-  opacity: 0.6;
-}
-
-/* Penyesuaian untuk layar sangat kecil */
-@media (max-width: 375px) {
-  .container { padding: 30px 20px; }
-  h1 { font-size: 22px; }
-  .profile-img { width: 110px; height: 110px; }
+  opacity: 0.5;
 }
 </style>
 </head>
@@ -145,15 +137,15 @@ p{
   <p>1.369 Pengikut • 1.764 Suka</p>
 
   <a class="link" href="https://mrjhonmc.web.id" target="_blank">
-    <i class="fa-solid fa-globe"></i> Website Utama
+    <i class="fa-solid fa-globe"></i> Website
   </a>
 
   <a class="link" href="https://tiktok.com/@mrjhon_official" target="_blank">
-    <i class="fa-brands fa-tiktok"></i> TikTok Profile
+    <i class="fa-brands fa-tiktok"></i> TikTok
   </a>
 
   <a class="link" href="https://youtube.com/@mrjhon_official" target="_blank">
-    <i class="fa-brands fa-youtube"></i> YouTube Channel
+    <i class="fa-brands fa-youtube"></i> YouTube
   </a>
 
   <div class="footer">
@@ -162,7 +154,7 @@ p{
 </div>
 
 <script>
-// Generate meteors
+// Tetap sama tanpa perubahan
 for(let i=0;i<15;i++){
   let meteor=document.createElement("div");
   meteor.className="meteor";
@@ -172,7 +164,6 @@ for(let i=0;i<15;i++){
   document.body.appendChild(meteor);
 }
 
-// Generate fireflies
 for(let i=0;i<10;i++){
   let fly=document.createElement("div");
   fly.className="firefly";
