@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>link bio mrjhon official</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:linear-gradient(135deg,#0f0f1a,#1a0033,#001f3f);
+  overflow:hidden;
+  color:white;
+}
+
+/* METEOR */
+.meteor{
+  position:absolute;
+  width:2px;
+  height:80px;
+  background:linear-gradient(transparent, white);
+  animation:fall linear infinite;
+  opacity:0.8;
+}
+
+@keyframes fall{
+  from{
+    transform:translateY(-100px) translateX(0);
+  }
+  to{
+    transform:translateY(100vh) translateX(-200px);
+  }
+}
+
+/* FIREFLY */
+.firefly{
+  position:absolute;
+  width:6px;
+  height:6px;
+  background:#7f5af0;
+  border-radius:50%;
+  box-shadow:0 0 10px #7f5af0, 0 0 20px #7f5af0;
+  animation:float 6s ease-in-out infinite alternate;
+}
+
+@keyframes float{
+  from{ transform:translateY(0px);}
+  to{ transform:translateY(20px);}
+}
+
+/* CONTAINER */
+.container{
+  position:relative;
+  width:90%;
+  max-width:400px;
+  backdrop-filter:blur(20px);
+  background:rgba(255,255,255,0.05);
+  padding:30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 0 40px rgba(0,0,0,0.6);
+  z-index:2;
+}
+
+.profile-img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  margin:auto;
+  margin-bottom:15px;
+  border:3px solid #7f5af0;
+  box-shadow:0 0 20px #7f5af0;
+  background:url('https://files.catbox.moe/0263u5.jpg') center/cover no-repeat;
+}
+
+h1{
+  font-size:22px;
+  margin-bottom:5px;
+}
+
+p{
+  font-size:14px;
+  opacity:0.7;
+  margin-bottom:25px;
+}
+
+.link{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  text-decoration:none;
+  color:white;
+  padding:14px;
+  margin:12px 0;
+  border-radius:12px;
+  background:rgba(255,255,255,0.08);
+  transition:0.3s;
+  font-weight:600;
+}
+
+.link:hover{
+  background:#7f5af0;
+  transform:translateY(-3px);
+  box-shadow:0 0 15px #7f5af0;
+}
+
+.footer{
+  margin-top:20px;
+  font-size:12px;
+  opacity:0.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="profile-img"></div>
+  <h1>@mrjhon_official</h1>
+  <p>1.369 Pengikut • 1.764 Suka</p>
+
+  <a class="link" href="https://mrjhonmc.web.id" target="_blank">
+    <i class="fa-solid fa-globe"></i> Website
+  </a>
+
+  <a class="link" href="https://tiktok.com/@mrjhon_official" target="_blank">
+    <i class="fa-brands fa-tiktok"></i> TikTok
+  </a>
+
+  <a class="link" href="https://youtube.com/@mrjhon_official" target="_blank">
+    <i class="fa-brands fa-youtube"></i> YouTube
+  </a>
+
+  <div class="footer">
+    © 2026 MrJhon Mc
+  </div>
+</div>
+
+<script>
+// Generate meteors
+for(let i=0;i<15;i++){
+  let meteor=document.createElement("div");
+  meteor.className="meteor";
+  meteor.style.left=Math.random()*100+"vw";
+  meteor.style.animationDuration=(Math.random()*3+2)+"s";
+  meteor.style.animationDelay=Math.random()*5+"s";
+  document.body.appendChild(meteor);
+}
+
+// Generate fireflies
+for(let i=0;i<10;i++){
+  let fly=document.createElement("div");
+  fly.className="firefly";
+  fly.style.top=Math.random()*100+"vh";
+  fly.style.left=Math.random()*100+"vw";
+  document.body.appendChild(fly);
+}
+</script>
+
+</body>
+</html>
