@@ -1,181 +1,89 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>link bio mrjhon official</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrjhon Official</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-body{
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg,#0f0f1a,#1a0033,#001f3f);
-  color: white;
-  padding: 20px;
-  overflow-x: hidden;
-}
-
-/* METEOR - Tetap sama */
-.meteor{
-  position:absolute;
-  width:2px;
-  height:80px;
-  background:linear-gradient(transparent, white);
-  animation:fall linear infinite;
-  opacity:0.8;
-  z-index: 1;
-}
-
-@keyframes fall{
-  from{ transform:translateY(-100px) translateX(0); }
-  to{ transform:translateY(100vh) translateX(-200px); }
-}
-
-/* FIREFLY - Tetap sama */
-.firefly{
-  position:absolute;
-  width:6px;
-  height:6px;
-  background:#7f5af0;
-  border-radius:50%;
-  box-shadow:0 0 10px #7f5af0, 0 0 20px #7f5af0;
-  animation:float 6s ease-in-out infinite alternate;
-  z-index: 1;
-}
-
-@keyframes float{
-  from{ transform:translateY(0px);}
-  to{ transform:translateY(20px);}
-}
-
-/* CONTAINER - LEBIH LEBAR & LEBIH GEDE */
-.container {
-  position: relative;
-  width: 95%; /* Lebih lebar dari sebelumnya */
-  max-width: 500px; /* Batas maksimal diperbesar */
-  backdrop-filter: blur(20px);
-  background: rgba(255,255,255,0.05);
-  padding: 50px 30px; /* Padding ditambah biar lega */
-  border-radius: 25px;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(0,0,0,0.6);
-  z-index: 2;
-}
-
-/* FOTO PROFIL - LEBIH BESAR */
-.profile-img{
-  width: 150px; /* Dari 110px jadi 150px */
-  height: 150px; /* Dari 110px jadi 150px */
-  border-radius: 50%;
-  margin: auto;
-  margin-bottom: 20px;
-  border: 4px solid #7f5af0;
-  box-shadow: 0 0 25px #7f5af0;
-  background: url('https://files.catbox.moe/0263u5.jpg') center/cover no-repeat;
-}
-
-/* TEKS - LEBIH BESAR */
-h1{
-  font-size: 30px; /* Dari 22px jadi 30px */
-  margin-bottom: 8px;
-}
-
-p{
-  font-size: 18px; /* Dari 14px jadi 18px */
-  opacity: 0.8;
-  margin-bottom: 35px;
-}
-
-/* TOMBOL - LEBIH BESAR & TEBAL */
-.link{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  text-decoration: none;
-  color: white;
-  padding: 18px; /* Padding diperbesar agar tombol tebal */
-  margin: 15px 0;
-  border-radius: 15px;
-  background: rgba(255,255,255,0.08);
-  transition: 0.3s;
-  font-weight: 700; /* Font weight ditebalkan */
-  font-size: 18px; /* Ukuran teks di tombol diperbesar */
-}
-
-.link:hover{
-  background: #7f5af0;
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 0 20px #7f5af0;
-}
-
-.footer{
-  margin-top: 30px;
-  font-size: 14px;
-  opacity: 0.5;
-}
-</style>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
 
-<div class="container">
-  <div class="profile-img"></div>
-  <h1>@mrjhon_official</h1>
-  <p>1.362 Pengikut • 1.774 Suka</p>
+    <!-- Background -->
+    <div id="stars"></div>
+    <div id="meteors"></div>
 
-  <a class="link" href="https://mrjhonmc.web.id" target="_blank">
-    <i class="fa-solid fa-globe"></i> Website
-  </a>
+    <!-- Card -->
+    <main class="container">
 
-  <a class="link" href="https://tiktok.com/@mrjhon_official" target="_blank">
-    <i class="fa-brands fa-tiktok"></i> TikTok
-  </a>
+        <div class="profile">
 
-  <a class="link" href="https://youtube.com/@mrjhon_official" target="_blank">
-    <i class="fa-brands fa-youtube"></i> YouTube
-  </a>
+            <img src="https://files.catbox.moe/0263u5.jpg" alt="Profile">
 
-  <a class="link" href="pay.html" target="_blank">
-    <i class="fa-solid fa-circle-dollar-to-slot"></i> Donate
-  </a>
+        </div>
 
-  <div class="footer">
-    © 2026 MrJhon Mc
-  </div>
-</div>
+        <h1>@mrjhon_official</h1>
 
-<script>
-// Tetap sama tanpa perubahan
-for(let i=0;i<15;i++){
-  let meteor=document.createElement("div");
-  meteor.className="meteor";
-  meteor.style.left=Math.random()*100+"vw";
-  meteor.style.animationDuration=(Math.random()*3+2)+"s";
-  meteor.style.animationDelay=Math.random()*5+"s";
-  document.body.appendChild(meteor);
-}
+        <p class="subtitle">
+            Creator <span>•</span> Web Developer <span>•</span> Vibe Coding
+        </p>
 
-for(let i=0;i<10;i++){
-  let fly=document.createElement("div");
-  fly.className="firefly";
-  fly.style.top=Math.random()*100+"vh";
-  fly.style.left=Math.random()*100+"vw";
-  document.body.appendChild(fly);
-}
-</script>
+        <div class="links">
+
+            <a href="https://mrjhonmc.web.id"
+               target="_blank"
+               class="link">
+
+                <i class="fa-solid fa-globe"></i>
+
+                <span>Website</span>
+
+            </a>
+
+            <a href="https://tiktok.com/@mrjhon_official"
+               target="_blank"
+               class="link">
+
+                <i class="fa-brands fa-tiktok"></i>
+
+                <span>TikTok</span>
+
+            </a>
+
+            <a href="https://youtube.com/@mrjhon_official"
+               target="_blank"
+               class="link">
+
+                <i class="fa-brands fa-youtube"></i>
+
+                <span>YouTube</span>
+
+            </a>
+
+            <a href="pay.html"
+               class="link support">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <span>Support Me</span>
+
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Mrjhon Mc. All Rights Reserved.
+    </footer>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
