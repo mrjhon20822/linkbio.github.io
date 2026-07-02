@@ -438,3 +438,18 @@ flex-direction:column;
 }
 
   }
+.donate-buttons{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    margin-top:18px;
+}
+
+.saweria{
+    background:linear-gradient(90deg,#ffb347,#ff7b00);
+    box-shadow:0 0 22px rgba(255,153,0,.45);
+}
+
+.saweria:hover{
+    background:linear-gradient(90deg,#ffc56d,#ff8c00);
+}
